@@ -35,7 +35,6 @@ aws iam create-policy \
     --policy-name AWSLoadBalancerControllerIAMPolicy \
     --policy-document file://iam_policy.json
 
-
 8**Create iam Role**
 eksctl create iamserviceaccount \
   --cluster=<your-cluster-name> \
