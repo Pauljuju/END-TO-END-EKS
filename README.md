@@ -6,16 +6,19 @@ eksctl create cluster --name example-cluster --region example-region --fargate
  aws eks update-kubeconfig --name example-cluster --region example-region
 
 3**Create a Fargate Profile so a new namespace can be created for deployment**
+
 eksctl create fargateprofile \
     --cluster example-cluster \
     --region example-region \
     --name alb-sample-app \
     --namespace game-2048
 
+
 4**Apply Deployment, Service and Ingress**
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
 
 Detailed Files is saved under "END TO END" or open in a browser, http//raw....to view content.
+
 
 run kubectl get pods -n game-2048 - to see if deployment is running
     kubectl get ingress -n game-2048 - to check ingress
@@ -35,6 +38,7 @@ aws iam create-policy \
     --policy-name AWSLoadBalancerControllerIAMPolicy \
     --policy-document file://iam_policy.json
 
+
 8**Create iam Role**
 eksctl create iamserviceaccount \
   --cluster=<your-cluster-name> \
@@ -48,8 +52,10 @@ eksctl create iamserviceaccount \
 9**Add helm repo**
 helm repo add eks https://aws.github.io/eks-charts
 
+
 10**Update repo**
 helm repo update eks
+
 
 11**Install Helm**
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system \
