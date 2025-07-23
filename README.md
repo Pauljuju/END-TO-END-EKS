@@ -15,6 +15,7 @@ eksctl create fargateprofile \
 
 
 4**Apply Deployment, Service and Ingress**
+
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
 
 Detailed Files is saved under "END TO END" or open in a browser, http//raw....to view content.
