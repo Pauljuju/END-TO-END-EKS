@@ -74,3 +74,8 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 kubectl get deployment -n kube-system aws-load-balancer-controller
 
 Kubectl get ingress -n game-2048 - this should depict the dns address with port which can be copiied into your browser to test deployed application.
+
+
+
+<img width="1443" height="987" alt="Screenshot (28)" src="https://github.com/user-attachments/assets/4ec85fd3-4ddb-4da7-be0a-0a4b999b3b34" />
+
