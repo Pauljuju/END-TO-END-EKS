@@ -30,11 +30,13 @@ eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
 
 
 6**Download iam policy**
+
 curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.11.0/docs/install/iam_policy.json
 
 You can get the above documentation from ALB Controller Documentation
 
 7**Create iam policy**
+
 aws iam create-policy \
     --policy-name AWSLoadBalancerControllerIAMPolicy \
     --policy-document file://iam_policy.json
@@ -59,6 +61,7 @@ helm repo update eks
 
 
 11**Install Helm**
+
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system \
   --set clusterName=<your-cluster-name> \
   --set serviceAccount.create=false \
