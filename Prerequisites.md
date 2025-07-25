@@ -7,4 +7,4 @@ AWS CLI – A command line tool for working with AWS services, including Amazon 
 FINALLY - Configure your terminal
         ***aws configure cmd***
 
-NOTE: FOR THE PURPOSE OF DEMO **PLEASE** USE THE "ROOT ACCOUNT"
+NOTE: FOR THE PURPOSE OF DEMO **PLEASE** USE THE "ROOT ACCOUNT TO PREVENT PASSING LOADS OF PERMISSIONS"
